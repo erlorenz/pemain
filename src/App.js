@@ -3,11 +3,12 @@ import Logo from '@/assets/pressexpresslogo.svg';
 import PhoneSize from '@/assets/suitsphonesize.jpeg';
 import VegasSign from '@/assets/vegassign.png';
 import '@/styles.css';
+import styled from 'styled-components';
 
 function App() {
     return (
         <>
-    <h1>hello</h1>
+    <H1>hello</H1>
     <Logo />
     <img src={PhoneSize} />
     <img src={VegasSign} />
@@ -16,3 +17,7 @@ function App() {
 }
 
 export default App;
+
+const H1 = styled.h1`
+color: blue;
+`;
