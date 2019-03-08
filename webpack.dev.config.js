@@ -1,7 +1,8 @@
 const merge = require('webpack-merge')
 const webpackCommonConfig = require('./webpack.common.config.js')
+const webpack = require('webpack');
 
-module.exports = merge(webpackBaseConfig, {
+module.exports = merge(webpackCommonConfig, {
     mode: 'development',
     module: {
         rules: [
@@ -14,7 +15,12 @@ module.exports = merge(webpackBaseConfig, {
               },
         ]
     },
+    devServer: {
+        contentBase: './dist',
+        hot: true,
+        open: true,
+      },
     plugins: [
-        new webpack.HotModuleReplacementPlugin();
+        new webpack.HotModuleReplacementPlugin(),   
     ]
 })

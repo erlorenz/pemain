@@ -34,6 +34,7 @@ module.exports = merge(webpackCommonConfig, {
 plugins: [
     new MiniCssExtractPlugin({
         filename: '[contenthash:8].css',
+        chunkFilename: "[name].chunk.css"
       }),
 ]
 })

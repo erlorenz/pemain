@@ -5,3 +5,5 @@ import App from '@/App.js'
 import 'sanitize.css';
 
 render(<App />, document.querySelector('#app'));
+
+module.hot.accept();
