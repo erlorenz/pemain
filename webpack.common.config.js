@@ -2,23 +2,20 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 
-
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[hash].js',
-    publicPath: '/'
+    chunkFilename: '[name].[hash].chunk.js',
+    publicPath: '/',
   },
   resolve: {
-    modules: [
-      'node_modules',
-      path.resolve(__dirname, 'src')
-    ],
+    modules: ['node_modules', path.resolve(__dirname, 'src')],
     extensions: ['.js'],
     alias: {
-      '@': path.resolve(__dirname, 'src')
-    }
+      '@': path.resolve(__dirname, 'src'),
+    },
   },
   module: {
     rules: [
@@ -27,7 +24,7 @@ module.exports = {
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
-        }
+        },
       },
       {
         test: /\.(png|jpg|jpeg)$/,
@@ -36,21 +33,21 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[hash:8].[ext]',
-              outputPath: 'assets/'
-            }
-          }
-        ]
+              outputPath: 'assets/',
+            },
+          },
+        ],
       },
       {
         test: /.svg$/,
         use: ['@svgr/webpack'],
-      }
-    ]
+      },
+    ],
   },
   plugins: [
     new CleanPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
-  ]
-}
+  ],
+};
