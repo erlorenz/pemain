@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 
 import phoneSize from '../../assets/img/shirtsinbags_phone_size.jpeg';
 import fullSize from '../../assets/img/ironing_full_size.jpeg';
@@ -83,7 +83,7 @@ const Button = styled.button`
   }
 
   :hover {
-    background-color: ${props => props.theme.buttonColor};
+    background-color: #75e9ff;
   }
 `;
 

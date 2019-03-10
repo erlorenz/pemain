@@ -76,6 +76,9 @@ const MenuButton = styled(animated.button)`
   padding: 0;
   border: none;
   font-size: 1.2rem;
+  width: 20px;
+  display: flex;
+  align-items: center;
 
   :focus {
     outline: none;
@@ -83,10 +86,6 @@ const MenuButton = styled(animated.button)`
 
   @media (min-width: 1025px) {
     display: none;
-  }
-
-  rect {
-    fill: white;
   }
 `;
 
