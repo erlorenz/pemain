@@ -1,7 +1,7 @@
-import { observable } from 'mobx';
+// import { observable } from 'mobx';
 
-var appState = observable({
-  timer: 0,
-});
+// var appState = observable({
+//   timer: 0,
+// });
 
-export default appState;
+// export default appState;

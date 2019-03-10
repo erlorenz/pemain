@@ -1,10 +1,9 @@
 import React from 'react';
-import Logo from '@/assets/pressexpresslogo.svg';
-import PhoneSize from '@/assets/suitsphonesize.jpeg';
-import VegasSign from '@/assets/vegassign.png';
-import '@/styles.css';
+import Logo from './assets/pressexpresslogo.svg';
+import PhoneSize from './assets/suitsphonesize.jpeg';
+import VegasSign from './assets/vegassign.png';
 import styled from 'styled-components';
-import { observer } from 'mobx-react';
+// import { observer } from 'mobx-react';
 
 function App() {
   return (
@@ -17,7 +16,7 @@ function App() {
   );
 }
 
-export default observer(App);
+export default App;
 
 const H1 = styled.h1`
   color: blue;

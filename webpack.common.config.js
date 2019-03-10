@@ -13,9 +13,6 @@ module.exports = {
   resolve: {
     modules: ['node_modules', path.resolve(__dirname, 'src')],
     extensions: ['.js'],
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-    },
   },
   module: {
     rules: [
