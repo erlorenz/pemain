@@ -1,23 +1,48 @@
-import React from 'react';
-import Logo from './assets/pressexpresslogo.svg';
-import PhoneSize from './assets/suitsphonesize.jpeg';
-import VegasSign from './assets/vegassign.png';
-import styled from 'styled-components';
-// import { observer } from 'mobx-react';
+import React, { Suspense } from 'react';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import styled, { ThemeProvider } from 'styled-components';
+import Loading from './components/Loading';
+import Landing from './pages/Landing/Landing';
+import GlobalStyle from './styles/GlobalStyle';
+import theme from './styles/theme';
 
-function App() {
+// const Order = React.lazy(() => import('./pages/Order/Order'));
+const NotFound = React.lazy(() => import('./pages/NotFound'));
+
+function _App({ location }) {
   return (
-    <>
-      <H1>hello</H1>
-      <Logo />
-      <img src={PhoneSize} />
-      <img src={VegasSign} />
-    </>
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyle />
+        <Suspense fallback={<CenterLoading />}>
+          <Switch location={location}>
+            <Route exact path="/" component={Landing} key="1" />
+            {/* <Route
+              path="/order"
+              render={props => <Order {...props} />}
+              key="2"
+            /> */}
+            <Route render={props => <NotFound {...props} />} key="3" />
+          </Switch>
+        </Suspense>
+      </>
+      {/* </StripeProvider> */}
+    </ThemeProvider>
   );
 }
 
+const App = withRouter(_App);
 export default App;
 
-const H1 = styled.h1`
-  color: blue;
+export const CenterLoading = styled(Loading)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  background: ${theme.backgroundColor};
 `;

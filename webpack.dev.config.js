@@ -1,6 +1,7 @@
 const merge = require('webpack-merge');
 const webpackCommonConfig = require('./webpack.common.config.js');
 const webpack = require('webpack');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = merge(webpackCommonConfig, {
   mode: 'development',
@@ -18,5 +19,8 @@ module.exports = merge(webpackCommonConfig, {
     open: true,
     quiet: true,
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [
+    new FriendlyErrorsWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+  ],
 });
