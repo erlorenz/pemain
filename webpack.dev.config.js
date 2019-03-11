@@ -13,6 +13,7 @@ module.exports = merge(webpackCommonConfig, {
       },
     ],
   },
+  devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
     hot: true,

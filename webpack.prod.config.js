@@ -16,6 +16,7 @@ module.exports = merge(webpackCommonConfig, {
       },
     ],
   },
+  stats: 'minimal',
   optimization: {
     minimize: true,
     runtimeChunk: true,
