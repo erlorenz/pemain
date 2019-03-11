@@ -4,11 +4,10 @@ const CleanPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[hash].js',
-    chunkFilename: '[name].[hash].chunk.js',
+    filename: '[name].[chunkhash].bundle.js',
     publicPath: '/',
   },
   resolve: {
@@ -45,7 +44,7 @@ module.exports = {
   plugins: [
     new CleanPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: path.resolve(__dirname, 'src', 'index.html'),
     }),
     new webpack.EnvironmentPlugin(['NODE_ENV', 'API_URL', 'STRIPE_KEY']),
   ],
