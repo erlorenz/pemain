@@ -18,6 +18,7 @@ module.exports = merge(webpackCommonConfig, {
     hot: true,
     open: true,
     quiet: true,
+    historyApiFallback: true,
   },
   plugins: [
     new FriendlyErrorsWebpackPlugin(),

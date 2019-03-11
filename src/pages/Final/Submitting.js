@@ -25,7 +25,12 @@ function Submitting(props) {
   return (
     <FullPage>
       <Container>
-        <Loading type="Ball-Triangle" color="#42c8e6" />
+        <Loading
+          type="Ball-Triangle"
+          color="#42c8e6"
+          height="100px"
+          width="100px"
+        />
         <Text>{displayText}</Text>
       </Container>
     </FullPage>

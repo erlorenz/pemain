@@ -14,7 +14,12 @@ function _App({ location }) {
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
-        <Suspense fallback={<CenterLoading />}>
+        <Suspense
+          fallback={
+            <CenterLoading>
+              <Loading height="200px" width="200px" />
+            </CenterLoading>
+          }>
           <Switch location={location}>
             <Route exact path="/" component={Landing} key="1" />
             <Route
@@ -34,7 +39,7 @@ function _App({ location }) {
 const App = withRouter(_App);
 export default App;
 
-export const CenterLoading = styled(Loading)`
+export const CenterLoading = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
