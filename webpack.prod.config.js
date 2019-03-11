@@ -22,8 +22,8 @@ module.exports = merge(webpackCommonConfig, {
     minimize: true,
     runtimeChunk: true,
     splitChunks: {
-      chunks: 'async',
-      name: false,
+      chunks: 'all',
+      // name: false,
     },
     minimizer: [new OptimizeCSSAssetsPlugin(), new TerserPlugin()],
   },
