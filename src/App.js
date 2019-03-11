@@ -6,7 +6,7 @@ import Landing from './pages/Landing/Landing';
 import GlobalStyle from './styles/GlobalStyle';
 import theme from './styles/theme';
 
-// const Order = React.lazy(() => import('./pages/Order/Order'));
+const Order = React.lazy(() => import('./pages/Order/Order'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 function _App({ location }) {
@@ -17,11 +17,11 @@ function _App({ location }) {
         <Suspense fallback={<CenterLoading />}>
           <Switch location={location}>
             <Route exact path="/" component={Landing} key="1" />
-            {/* <Route
+            <Route
               path="/order"
               render={props => <Order {...props} />}
               key="2"
-            /> */}
+            />
             <Route render={props => <NotFound {...props} />} key="3" />
           </Switch>
         </Suspense>
