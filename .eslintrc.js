@@ -19,7 +19,7 @@ module.exports = {
     ],
     "rules": {
         "no-unused-vars": 1,
-        "no-console": 1,
+        "no-console": 0,
         'react/prop-types': 0,
         'react/no-unescaped-entities': 0,
         'prettier/prettier': ['error', {

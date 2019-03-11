@@ -15,15 +15,7 @@ import {
 } from './FieldGroupStyles';
 import RadioButton from './RadioButton';
 
-const DoubleRadio = ({
-  children,
-  label,
-  name,
-  times,
-  formikProps,
-  values,
-  ...props
-}) => {
+const DoubleRadio = ({ label, name, times, formikProps, values }) => {
   const { errors, touched, handleChange, handleBlur } = formikProps;
 
   const errorMessage = touched[name] && errors[name] ? errors[name] : '';

@@ -4,13 +4,7 @@ import { Button } from '../../components/UI';
 import { GarmentsContext } from '../../contexts/Garments';
 import { ScheduleContext } from '../../contexts/Schedule';
 
-const FinalBottombar = ({
-  history,
-  submitForm,
-  values,
-  isSubmitting,
-  cardComplete,
-}) => {
+const FinalBottombar = ({ submitForm, values, isSubmitting, cardComplete }) => {
   const garmentsContext = useContext(GarmentsContext);
   const scheduleContext = useContext(ScheduleContext);
 

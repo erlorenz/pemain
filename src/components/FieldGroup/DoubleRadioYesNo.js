@@ -14,16 +14,12 @@ import {
 import RadioButton from './RadioButton';
 
 const DoubleRadioYesNo = ({
-  children,
   label,
   name,
   formikProps,
   option1,
   option2,
-  value1,
-  value2,
   currentValue,
-  ...props
 }) => {
   const { errors, touched, handleChange, handleBlur } = formikProps;
 

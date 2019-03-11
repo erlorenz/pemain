@@ -22,7 +22,7 @@ const GarmentChoice = () => {
   const items = context.garments;
   // const transitions = useTransition(items, item => item.slug, listFadeAndSlide);
 
-  const garmentList = items.map((item, index) => {
+  const garmentList = items.map(item => {
     return (
       <Item key={item.slug} onClick={removeGarmentHandler(item)}>
         <Div1>{item.description}</Div1>

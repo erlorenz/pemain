@@ -30,4 +30,6 @@ if (rootElement.hasChildNodes()) {
 }
 
 // Hot module reloading
-module.hot.accept();
+if (process.env.NODE_ENV === 'development') {
+  module.hot.accept();
+}

@@ -4,7 +4,7 @@ import { animated } from 'react-spring';
 import styled from 'styled-components';
 import { GarmentsContext } from '../../contexts/Garments';
 
-const GarmentListItem = ({ children, list, garment }) => {
+const GarmentListItem = ({ children, garment }) => {
   const [showTooltip, setShowTooltip] = useState(false);
   const [disable, setDisable] = useState(false);
 

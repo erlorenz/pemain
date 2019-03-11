@@ -31,6 +31,5 @@ module.exports = merge(webpackCommonConfig, {
       filename: '[contenthash:8].css',
       chunkFilename: '[name].chunk.css',
     }),
-    new BundleAnalyzerPlugin(),
   ],
 });
