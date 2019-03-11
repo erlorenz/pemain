@@ -34,7 +34,7 @@ const Success = ({ location }) => {
 
   const sendErrorEmail = async () => {
     try {
-      await axios.post(process.env.REACT_APP_API_URL + '/checkout/error', {
+      await axios.post(process.env.API_URL + '/checkout/error', {
         text,
         receipt,
         database,

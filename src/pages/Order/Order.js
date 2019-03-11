@@ -23,7 +23,7 @@ const Order = props => {
     stripeJs.src = 'https://js.stripe.com/v3/';
     stripeJs.async = true;
     stripeJs.addEventListener('load', () => {
-      setStripe(window.Stripe(process.env.REACT_APP_STRIPE_KEY));
+      setStripe(window.Stripe(process.env.STRIPE_KEY));
     });
     document.body && document.body.appendChild(stripeJs);
   }, []);

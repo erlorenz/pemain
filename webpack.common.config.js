@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
-const DashboardPlugin = require('webpack-dashboard/plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -47,5 +47,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
+    new webpack.EnvironmentPlugin(['NODE_ENV', 'API_URL', 'STRIPE_KEY']),
   ],
 };

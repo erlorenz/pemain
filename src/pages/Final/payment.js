@@ -3,7 +3,7 @@ import axios from 'axios';
 const payment = async (setError, dataToSubmit) => {
   try {
     const paymentResponse = await axios.post(
-      process.env.REACT_APP_API_URL + '/checkout/payment',
+      process.env.API_URL + '/checkout/payment',
       dataToSubmit,
     );
     // If response says there was an error

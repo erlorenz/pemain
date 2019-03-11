@@ -5,8 +5,7 @@ import UncheckedRadio from '../../assets/img/uncheckedradio.svg';
 import { useSpring, animated } from 'react-spring';
 
 function RadioButton({ checked }) {
-  // Explode the radio button
-
+  // Radio button animation on checked
   const explodeOut = useSpring({
     opacity: checked ? 0 : 1,
     transform: checked ? 'scale(1.8, 1.8)' : 'scale(1, 1)',

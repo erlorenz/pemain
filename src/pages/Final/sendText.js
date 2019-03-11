@@ -3,10 +3,10 @@ import axiosError from '../../utils/axiosError';
 
 const sendText = async ({ name, phone }) => {
   try {
-    const response = await axios.post(
-      process.env.REACT_APP_API_URL + '/checkout/text',
-      { name, phone },
-    );
+    const response = await axios.post(process.env.API_URL + '/checkout/text', {
+      name,
+      phone,
+    });
     console.log('[Text]', response.data);
     return response.data;
   } catch (e) {
