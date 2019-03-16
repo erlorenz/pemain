@@ -4,7 +4,7 @@ import { roundingCutoff } from '../utils/customerTimes';
 
 export const ScheduleContext = createContext();
 
-export const ScheduleProvider = ({ children, history }) => {
+export const ScheduleProvider = ({ children }) => {
   const blankValues = {
     pickupDate: '',
     pickupHour: '',
